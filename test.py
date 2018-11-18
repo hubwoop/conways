@@ -1,5 +1,5 @@
 import unittest
-from conways import GameBoard
+from GameBoard import GameBoard
 
 
 class TestGameRules(unittest.TestCase):

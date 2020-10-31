@@ -34,7 +34,7 @@ class GameBoard:
             cell.alive = cell.fate
 
     def __str__(self):
-        symbols = self.aggregate_symbols()
+        symbols = self.translate_cell_states_to_symbols()
         out = ''
         for row in symbols:
             for symbol in row:
@@ -42,7 +42,7 @@ class GameBoard:
             out += '\n'
         return out
 
-    def aggregate_symbols(self) -> List[List[str]]:
+    def translate_cell_states_to_symbols(self) -> List[List[str]]:
         return [['X' if self.get_cell(x, y).alive else '.'
                 for x in range(self.size)]
                 for y in range(self.size)]

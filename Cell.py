@@ -1,4 +1,3 @@
-import GameBoard
 from collections import namedtuple
 
 Fates = namedtuple('Fates', ['dies', 'lives'])

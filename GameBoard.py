@@ -6,7 +6,7 @@ class GameBoard:
 
     def __init__(self, size: int):
         self.size = size
-        self.board = [[Cell.Cell(self, x, y) for x in range(size)] for y in range(size)]
+        self.board = [[Cell.Cell(x, y) for x in range(size)] for y in range(size)]
         self.flat_board = [item for row in self.board for item in row]
 
     def get_cell(self, x, y) -> Cell.Cell:
@@ -18,7 +18,7 @@ class GameBoard:
 
     def decide_fates(self) -> None:
         for cell in self.flat_board:
-            cell.decide_fate()
+            cell.decide_fate(self)
 
     def fulfill_fates(self) -> None:
         for cell in self.flat_board:

@@ -42,14 +42,14 @@ class TestGameRules(unittest.TestCase):
     def test_count_one_neighbour(self):
         game = GameBoard(5)
         game.get_cell(0, 0).alive = True
-        count = game.get_cell(1, 1).living_neighbours()
+        count = game.get_cell(1, 1).living_neighbours(game)
         self.assertEqual(1, count)
 
     def test_count_two_neighbours(self):
         game = GameBoard(5)
         game.get_cell(0, 0).alive = True
         game.get_cell(0, 1).alive = True
-        count = game.get_cell(1, 1).living_neighbours()
+        count = game.get_cell(1, 1).living_neighbours(game)
         self.assertEqual(2, count)
 
     def test_count_four_neighbours(self):
@@ -58,7 +58,7 @@ class TestGameRules(unittest.TestCase):
         game.get_cell(0, 1).alive = True
         game.get_cell(0, 2).alive = True
         game.get_cell(1, 0).alive = True
-        count = game.get_cell(1, 1).living_neighbours()
+        count = game.get_cell(1, 1).living_neighbours(game)
         self.assertEqual(4, count)
 
     def test_count_eight_neighbours(self):
@@ -71,7 +71,7 @@ class TestGameRules(unittest.TestCase):
         game.get_cell(2, 0).alive = True
         game.get_cell(2, 1).alive = True
         game.get_cell(2, 2).alive = True
-        count = game.get_cell(1, 1).living_neighbours()
+        count = game.get_cell(1, 1).living_neighbours(game)
         self.assertEqual(8, count)
 
 

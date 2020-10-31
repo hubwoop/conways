@@ -50,7 +50,7 @@ def fancy_pattern_demo():
 
 
 if __name__ == '__main__':
-    # glider_demo()
-    fancy_pattern_demo()
+    glider_demo()
+    # fancy_pattern_demo()
 
 

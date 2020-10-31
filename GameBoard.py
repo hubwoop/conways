@@ -18,7 +18,16 @@ class GameBoard:
 
     def decide_fates(self) -> None:
         for cell in self.flat_board:
-            cell.decide_fate(self)
+            cell.decide_fate(self.count_living_neighbours(cell))
+
+    def count_living_neighbours(self, cell: Cell) -> int:
+        neighbours_alive = 0
+        for x in [-1, 0, 1]:
+            for y in [-1, 0, 1]:
+                neighbour = self.get_cell(cell.x + x, cell.y + y)
+                if not x == y == 0 and neighbour.alive:
+                    neighbours_alive += 1
+        return neighbours_alive
 
     def fulfill_fates(self) -> None:
         for cell in self.flat_board:
